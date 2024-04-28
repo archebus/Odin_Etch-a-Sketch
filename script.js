@@ -45,8 +45,11 @@ function makeBoxes() {
     const boxes = document.querySelectorAll(".boxo");
 
     boxes.forEach((boxo) => {
+        let R = Math.floor(Math.random() * 256)
+        let G = Math.floor(Math.random() * 256)
+        let B = Math.floor(Math.random() * 256)
         boxo.addEventListener("mouseenter", () => {
-            boxo.style.backgroundColor = "black";
+            boxo.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
         });
     });
 }
