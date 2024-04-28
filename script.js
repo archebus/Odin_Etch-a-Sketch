@@ -1,13 +1,56 @@
 const boxContainer = document.getElementById("boxes");
+const eightButton = document.getElementById("eight");
+const sixteenButton = document.getElementById("sixteen");
+const thirtytwoButton = document.getElementById("thirtytwo");
 
-function makeBoxes() {
-    for (let j = 0; j < 16; j++) {
-        for (let i = 0; i < 16; i++) {
-            let boxo = document.createElement("div");
+let boxSize = 16;
+let minHeight = 800 / boxSize;
+let flexWidth = 100 / boxSize;
+
+makeBoxes(); // Initial Call of Boxes
+
+eightButton.onclick = () => {
+    console.log("Eight Clicked!")
+    boxSize = 8;
+    minHeight = 800 / boxSize;
+    flexWidth = 100 / boxSize;
+    removeBoxes();
+    makeBoxes();
+}
+
+sixteenButton.onclick = () => {
+    console.log("Sixteen Clicked!")
+    boxSize = 16;
+    minHeight = 800 / boxSize;
+    flexWidth = 100 / boxSize;
+    removeBoxes();
+    makeBoxes();
+}
+
+thirtytwoButton.onclick = () => {
+    console.log("ThirtyTwo Clicked!")
+    boxSize = 32;
+    minHeight = 800 / boxSize;
+    flexWidth = 100 / boxSize;
+    removeBoxes();
+    makeBoxes();
+}
+
+function makeBoxes() {    
+    for (let j = 0; j < boxSize; j++) {
+        for (let i = 0; i < boxSize; i++) {
+            var boxo = document.createElement("div");
             boxo.className = "boxo";
             boxContainer.append(boxo);
+            boxo.style.cssText = `flex: 1 0 ${flexWidth}%; min-height: ${minHeight}px;`;
         }
     }
 }
 
-makeBoxes();
+function removeBoxes() {
+    let child = boxContainer.lastElementChild;
+    while (child) {
+        boxContainer.removeChild(child);
+        child = boxContainer.lastElementChild;
+    }
+}
