@@ -3,3 +3,19 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
+#top-space {
+    margin-top: 100px;
+}
+
+#boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.boxo {
+    border: solid 2px red;
+    flex: 1 0 6.25%;
+    min-height: 100px;
+}
