@@ -10,7 +10,6 @@ let flexWidth = 100 / boxSize;
 makeBoxes(); // Initial Call of Boxes
 
 eightButton.onclick = () => {
-    console.log("Eight Clicked!")
     boxSize = 8;
     minHeight = 800 / boxSize;
     flexWidth = 100 / boxSize;
@@ -19,7 +18,6 @@ eightButton.onclick = () => {
 }
 
 sixteenButton.onclick = () => {
-    console.log("Sixteen Clicked!")
     boxSize = 16;
     minHeight = 800 / boxSize;
     flexWidth = 100 / boxSize;
@@ -28,7 +26,6 @@ sixteenButton.onclick = () => {
 }
 
 thirtytwoButton.onclick = () => {
-    console.log("ThirtyTwo Clicked!")
     boxSize = 32;
     minHeight = 800 / boxSize;
     flexWidth = 100 / boxSize;
@@ -45,6 +42,13 @@ function makeBoxes() {
             boxo.style.cssText = `flex: 1 0 ${flexWidth}%; min-height: ${minHeight}px;`;
         }
     }
+    const boxes = document.querySelectorAll(".boxo");
+
+    boxes.forEach((boxo) => {
+        boxo.addEventListener("mouseenter", () => {
+            boxo.style.backgroundColor = "black";
+        });
+    });
 }
 
 function removeBoxes() {

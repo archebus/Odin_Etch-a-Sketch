@@ -30,15 +30,10 @@ button {
 }
 
 .boxo {
-    border: solid 2px red;
-    flex: 1 0 6.25%;
-    min-height: 50px;
-}
-
-.boxo:hover {
-    background-color: red;
+    border: dashed 1px black;
 }
 
 #bottom-space {
     margin-bottom: 100px;
+    border: solid 2px black;
 }
